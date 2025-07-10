@@ -44,7 +44,7 @@
             <div class="autor-box">Emre</div>
         </div>
 
-        <button onclick="autorenUmschalten()">Autoren anzeigen</button>
+        <button id = "autor-button" onclick="autorenUmschalten()">Autoren anzeigen</button>
 
         <script>
             function autorenUmschalten() {
@@ -58,7 +58,7 @@
                 });
 
                 // Button-Text aktualisieren
-                const button = document.querySelector("button[onclick='autorenUmschalten()']");
+                const button = document.getElementById("autor-button");
                 button.textContent = sollenAngezeigtWerden ? "Autoren verstecken" : "Autoren anzeigen";
             }
         </script>
@@ -81,6 +81,17 @@
                     b.textContent = "Mehr anzeigen"
                 }
             }
+        </script>
+
+        <br>
+        <button id="hallo-button">Sag Hallo</button>
+
+        <script>
+            const button = document.getElementById("hallo-button");
+
+            button.addEventListener("click", function() {
+                alert("Hallo!");
+            });
         </script>
     </body>
 </html>
