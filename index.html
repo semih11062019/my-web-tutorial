@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meine erste Webseite</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Deutsches Eksi Sözlük</h1>
+        <p class="highlight">Herzlich willkommen auf meinem deutschen Eksi Sözlük</p>
+
+        <h2 id="info">Was ist das?</h2>
+        <p>Ein Ort, an dem du Begriffe auf kreative, humorvolle oder ernste Weise beschreiben kannst.</p>
+
+        <h3>Beispiel:</h3>
+        <p><strong>Montag</strong> - Der Feind der Freiheit.<br>
+            <em>Wird oft mit Kaffee bekämpft.</em>
+        </p>
+
+        <h2>Mehr erfahren</h2>
+        <a href="https://de.wikipedia.org/wiki/Montag" target="_blank">Mehr über Montag auf Wiki</a>
+
+        <h2>Sprachen</h2>
+        <ul>
+            <li>Deutsch</li>
+            <li>Türkisch</li>
+            <li>Englisch</li>
+        </ul>
+
+        <h2>Top 5 Beiträge</h2>
+        <ol>
+            <li>Montag</li>
+            <li>Steuererklärung</li>
+            <li>Bürokratie</li>
+            <li>Winter</li>
+            <li>Schule</li>
+        </ol>
+
+        <h2>Unsere Autoren</h2>
+        <div class="autoren-container">
+            <div class="autor-box">Ali</div>
+            <div class="autor-box">Sophie</div>
+            <div class="autor-box">Emre</div>
+        </div>
+
+        <button onclick="autorenUmschalten()">Autoren anzeigen</button>
+
+        <script>
+            function autorenUmschalten() {
+                const autoren = document.querySelectorAll(".autor-box");
+                const ersterAutor = autoren[0];
+
+                const sollenAngezeigtWerden = ersterAutor.style.display === "none" || ersterAutor.style.display === "";
+
+                autoren.forEach(autor => {
+                    autor.style.display = sollenAngezeigtWerden ? "inline-block" : "none";
+                });
+
+                // Button-Text aktualisieren
+                const button = document.querySelector("button[onclick='autorenUmschalten()']");
+                button.textContent = sollenAngezeigtWerden ? "Autoren verstecken" : "Autoren anzeigen";
+            }
+        </script>
+
+        <h2>Über uns</h2>
+        <button id="button-item" onclick="zeigeInfo()">Mehr anzeigen</button>
+        <p id="info-text" style="display: none;">
+            Wir sind ein Team kreativer Köpfe mit viel Humor und Wortwitz.
+        </p>
+        
+        <script>
+            function zeigeInfo() {
+                const p = document.getElementById("info-text");
+                const b = document.getElementById("button-item");
+                if(p.style.display === "none" || p.style.display === "") {
+                    p.style.display = "block";
+                    b.textContent = "Weniger anzeigen";
+                } else {
+                    p.style.display = "none";
+                    b.textContent = "Mehr anzeigen"
+                }
+            }
+        </script>
+    </body>
+</html>
