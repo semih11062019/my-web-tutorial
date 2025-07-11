@@ -56,7 +56,7 @@ h2 {
 }
 
 .autor-box {
-  display: none;
+  display: inline-block;
   padding: 10px;
   background-color: #dbeafe;
   margin: 5px;
@@ -65,4 +65,12 @@ h2 {
 
 #hallo-button {
   margin-top: 20px;
+}
+
+.togglebereich {
+  display: none;
+}
+
+.togglebereich.active {
+  display: block;
 }

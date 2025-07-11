@@ -39,29 +39,22 @@
     </ol>
 
     <h2>Unsere Autoren</h2>
-    <div class="autoren-container">
+    <div class="autoren-container togglebereich">
       <div class="autor-box">Ali</div>
       <div class="autor-box">Sophie</div>
       <div class="autor-box">Emre</div>
     </div>
 
-    <button id="autor-button" onclick="autorenUmschalten()">Autoren anzeigen</button>
+    <button id="autor-toggle-button">Autoren anzeigen</button>
 
     <script>
-      function autorenUmschalten() {
-        const autoren = document.querySelectorAll(".autor-box");
-        const ersterAutor = autoren[0];
+      const button = document.getElementById("autor-toggle-button");
+      const bereich = document.querySelector(".togglebereich");
 
-        const sollenAngezeigtWerden = ersterAutor.style.display === "none" || ersterAutor.style.display === "";
-
-        autoren.forEach((autor) => {
-          autor.style.display = sollenAngezeigtWerden ? "inline-block" : "none";
-        });
-
-        // Button-Text aktualisieren
-        const button = document.getElementById("autor-button");
-        button.textContent = sollenAngezeigtWerden ? "Autoren verstecken" : "Autoren anzeigen";
-      }
+      button.addEventListener("click", function () {
+        bereich.classList.toggle("active");
+        button.textContent = bereich.classList.contains("active") ? "Autoren verstecken" : "Autoren anzeigen";
+      });
     </script>
 
     <h2>Über uns</h2>
@@ -84,13 +77,5 @@
 
     <br />
     <button id="hallo-button">Sag Hallo</button>
-
-    <script>
-      const button = document.getElementById("hallo-button");
-
-      button.addEventListener("click", function () {
-        alert("Hallo!");
-      });
-    </script>
   </body>
 </html>
